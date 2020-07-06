@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class guess {
+public class Project {
 
     public static void main(String[] args) {
         int tries = 0;

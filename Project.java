@@ -1,29 +1,43 @@
-import java.util.*; 
+import java.util.Scanner;
 
-public class Project {
-  
-  public static void main(String[] args) {
-    
-    Scanner user_input = new Scanner(System.in);
-    
-    System.out.println("Welcome to the 5th Dimension!\n");
+public class guess {
 
-    System.out.println("What is your name?");
-    
-    String something = user_input.nextLine();
-    
-    System.out.println("Hello," + something);
-    System.out.println("I hope you are doing well today!\n\n");
-    System.out.println("Let us play a game, guess the first letter of my name!");
-    
-    Scanner user_input = new Scanner(System.in);
-    
-    char myguess = user_input.nextLine();
-    
-    if (char myguess != 'N') {
-      System.out.println("Sorry, you guessed wrong!, try again.");
-      return Scanner; 
+    public static void main(String[] args) {
+        int tries = 0;
+
+        boolean iterated = false;
+        String temp = "";
+        String holder = "";
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Let us play a game. What is my name?");
+        String word = keyboard.nextLine();
+
+        do {
+            String guess = keyboard.nextLine();
+
+            for(int i = 0; i < word.length(); i ++) {
+                if (guess.equals(Character.toString(word.charAt(i)))) {
+                    if(!iterated)
+                        temp += Character.toString(word.charAt(i));
+                    else {
+                        holder = Character.toString(temp.charAt(i)).replace("-", guess);
+                        temp = temp.substring(0, i) + holder + temp.substring( i + 1, temp.length());
+                    }
+                } else {
+                    if(!iterated) {
+                        temp += "-";
+                    }
+                }
+            }
+            tries++;
+            iterated = true;
+            System.out.println(temp);
+            if(temp.equals(word)) {
+                System.out.println("You're right! My name is Nardin!");
+                break;
+            }
+        }while (tries < 10);
+
     }
-    
-  }
 }

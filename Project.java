@@ -24,7 +24,7 @@ public class Project {
       case "yes":
       System.out.println("Which state do you reside in?");
       state = user_input.nextLine();
-      System.out.println("Beautiful state! I would love ot visit!");
+      System.out.println("Beautiful state! I would love to visit!");
       break;
       case "no":
       System.out.println("Where are you from?");

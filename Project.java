@@ -12,12 +12,12 @@ public class Project {
        Scanner user_input = new Scanner(System.in); 
         System.out.println("Hello! my name is Nardin, what is your First name?");
         first_name = user_input.nextLine();
-        System.out.println("Hello!" + first_name);
+        System.out.println("Hello!" + " " + first_name);
       
       System.out.println("What is your last name?");
       last_name = user_input.nextLine();
-      System.out.println("Hello!" + first_name + last_name);
-    System.out.println("Are you a U.S. citizen?");
+      System.out.println("Hello!" + " " + first_name + " " + last_name);
+    System.out.println("Are you a U.S. citizen? Answer Yes or No please");
     citizenship = user_input.nextLine();
 
     switch(citizenship) {
@@ -27,6 +27,16 @@ public class Project {
       System.out.println("Beautiful state! I would love to visit!");
       break;
       case "no":
+      System.out.println("Where are you from?");
+      citizenship_n = user_input.nextLine();
+      System.out.println("Very beautiful country! I would love to visit!");
+      break;
+      case "Yes":
+      System.out.println("Which state do you reside in?");
+      state = user_input.nextLine();
+      System.out.println("Beautiful state! I would love to visit!");
+      break;
+      case "No":
       System.out.println("Where are you from?");
       citizenship_n = user_input.nextLine();
       System.out.println("Very beautiful country! I would love to visit!");
